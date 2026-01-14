@@ -724,12 +724,12 @@ h1, h2, h3, h4 {
 
 .gallery-photo {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    aspect-ratio: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
 }
 
 .gallery-photo:hover {
