@@ -81,6 +81,12 @@ function setupWelcomeScreen() {
     const invitationScreen = document.getElementById('invitation-screen');
     
     envelopeContainer.addEventListener('click', function() {
+        // Iniciar música al hacer clic
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.play().catch(err => console.log('Error al reproducir música:', err));
+        }
+        
         // Animación de salida
         welcomeScreen.style.opacity = '0';
         
@@ -121,19 +127,21 @@ function setupMapButtons() {
 
 // Configurar botón de confirmación
 function setupConfirmButton() {
-    const confirmButton = document.getElementById('btn-confirm');
+    const confirmButtons = document.querySelectorAll('.btn-confirm');
     
-    confirmButton.addEventListener('click', function() {
-        let message;
-        
-        if (isFamilia) {
-            message = `La ${guestName} confirma la asistencia`;
-        } else {
-            message = `Yo ${guestName} confirmo asistencia`;
-        }
-        
-        const whatsappURL = `https://wa.me/5219932334052?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, '_blank');
+    confirmButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            let message;
+            
+            if (isFamilia) {
+                message = `La ${guestName} confirma la asistencia`;
+            } else {
+                message = `Yo ${guestName} confirmo asistencia`;
+            }
+            
+            const whatsappURL = `https://wa.me/5219932334052?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
     });
 }
 
@@ -159,22 +167,23 @@ function setupBackgroundMusic() {
     musicButton.className = 'music-toggle';
     musicButton.style.cssText = 'position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;border:none;background:var(--gold);color:white;font-size:1.8rem;cursor:pointer;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:all 0.3s ease;';
     
-    let isPlaying = true;
+    let isPlaying = false;
     
-    // Intentar reproducir automáticamente
-    const playPromise = audio.play();
+    // No intentar reproducir automáticamente - se iniciará al tocar el sobre
+    musicButton.innerHTML = '🔇';
     
-    if (playPromise !== undefined) {
-        playPromise.then(() => {
-            // Reproducción automática exitosa
-            musicButton.innerHTML = '🔊';
-            isPlaying = true;
-        }).catch(() => {
-            // Reproducción automática bloqueada por el navegador
-            musicButton.innerHTML = '🔇';
-            isPlaying = false;
-        });
-    }
+    // Escuchar cuando la música comience a reproducirse
+    audio.addEventListener('play', () => {
+        musicButton.innerHTML = '🔊';
+        musicButton.style.background = 'var(--gold)';
+        isPlaying = true;
+    });
+    
+    audio.addEventListener('pause', () => {
+        musicButton.innerHTML = '🔇';
+        musicButton.style.background = '#999';
+        isPlaying = false;
+    });
     
     musicButton.addEventListener('click', () => {
         if (isPlaying) {

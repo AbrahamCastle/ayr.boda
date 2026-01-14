@@ -19,6 +19,8 @@ body {
     background-color: var(--cream);
     color: var(--text-dark);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 h1, h2, h3, h4 {
@@ -217,7 +219,9 @@ h1, h2, h3, h4 {
 .invitation-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -293,10 +297,11 @@ h1, h2, h3, h4 {
 
 .countdown {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.5rem;
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 0.5rem;
 }
 
 .countdown-item {
@@ -327,8 +332,8 @@ h1, h2, h3, h4 {
 /* Event Details */
 .event-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -471,8 +476,8 @@ h1, h2, h3, h4 {
 
 .dress-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
     max-width: 800px;
     margin: 0 auto 2rem;
 }
@@ -646,8 +651,8 @@ h1, h2, h3, h4 {
 
 .gift-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
     max-width: 700px;
     margin: 0 auto;
 }
@@ -707,8 +712,8 @@ h1, h2, h3, h4 {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
 }
 
 .photo-item {
@@ -857,6 +862,10 @@ h1, h2, h3, h4 {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .invitation-content {
+        padding: 0.5rem;
+    }
+    
     .invitation-header h1 {
         font-size: 2rem;
     }
@@ -875,10 +884,31 @@ h1, h2, h3, h4 {
     
     .countdown {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .countdown-item {
+        padding: 1rem 0.5rem;
     }
     
     .countdown-number {
         font-size: 2rem;
+    }
+    
+    .detail-card {
+        padding: 1.5rem;
+    }
+    
+    .dress-item {
+        padding: 1.5rem;
+    }
+    
+    .gift-card {
+        padding: 1rem;
+    }
+    
+    .rsvp, .gifts, .itinerary {
+        padding: 2rem 1rem;
     }
     
     .timeline::before {
@@ -892,5 +922,65 @@ h1, h2, h3, h4 {
     .timeline-item {
         grid-template-columns: 100px 1fr;
         gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .invitation-content {
+        padding: 0.25rem;
+    }
+    
+    .invitation-header,
+    .countdown-section,
+    .detail-card,
+    .dress-code,
+    .rsvp,
+    .gifts,
+    .itinerary,
+    .gallery,
+    .invitation-footer {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25rem;
+    }
+    
+    .countdown-item {
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+    
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .dress-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .gift-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-confirm {
+        min-width: 200px;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
     }
 }
