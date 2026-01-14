@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos! - Abraham & Raquel</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de bienvenida -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <div class="floral-top"></div>
+            <h1 class="announce">¡NOS CASAMOS!</h1>
+            <div class="couple-logo">
+                <img src="assets/images/AYR.webp" alt="Abraham & Raquel">
+            </div>
+            <div class="envelope-container">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="wax-seal"></div>
+                </div>
+                <div class="tap-instruction">
+                    <p>TAP PARA ABRIR LA</p>
+                    <p>INVITACIÓN</p>
+                </div>
+            </div>
+            <div class="floral-bottom"></div>
+        </div>
+    </div>
+
+    <!-- Pantalla principal de invitación -->
+    <div id="invitation-screen" class="screen">
+        <div class="invitation-content">
+            <!-- Header -->
+            <header class="invitation-header">
+                <div class="floral-decoration"></div>
+                <div class="couple-photo">
+                    <img src="assets/images/AYR.webp" alt="Abraham & Raquel">
+                </div>
+                <h1>¡Nos Casamos!</h1>
+                <p class="guest-greeting">Querido(a) <span id="guest-name">Invitado</span></p>
+                <p class="invitation-text">Tenemos el honor de <span id="invitation-verb">invitarte</span> a celebrar nuestro matrimonio</p>
+            </header>
+
+            <!-- Contador de días -->
+            <section class="countdown-section">
+                <h2>Faltan</h2>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-number">0</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-number">0</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-number">0</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-number">0</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detalles del evento -->
+            <section class="event-details">
+                <div class="detail-card">
+                    <div class="icon">💒</div>
+                    <h3>Ubicación</h3>
+                    <p class="time">1:00 PM</p>
+                    <p class="location">Quinta Los Samanes</p>
+                    <p class="address">8 Prolongación 27 de Febrero, Jalpa de Méndez, Tabasco</p>
+                    <button class="btn-map" data-location="church">Ver mapa</button>
+                </div>
+            </section>
+
+            <!-- Fecha -->
+            <section class="date-section">
+                <div class="date-ornament"></div>
+                <p class="date-text">Sábado, 14 de Febrero de 2026</p>
+                <div class="date-ornament"></div>
+            </section>
+
+            <!-- Itinerario -->
+            <section class="itinerary">
+                <h2>Itinerario del Día</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">1:00 PM</div>
+                        <div class="timeline-content">
+                            <h4>Ceremonia Religiosa</h4>
+                            <p>Celebración de nuestro matrimonio</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">2:00 PM</div>
+                        <div class="timeline-content">
+                            <h4>Recepción</h4>
+                            <p>Cóctel de bienvenida</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">3:00 PM</div>
+                        <div class="timeline-content">
+                            <h4>Almuerzo</h4>
+                            <p>Delicioso almuerzo para nuestros invitados</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">4:30 PM</div>
+                        <div class="timeline-content">
+                            <h4>Dinámicas</h4>
+                            <p>¡A celebrar toda la tarde!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Código de vestimenta -->
+            <section class="dress-code">
+                <h2>Código de Vestimenta</h2>
+                <div class="dress-info">
+                    <div class="dress-grid">
+                        <div class="dress-item">
+                            <div class="icon">👔</div>
+                            <h3>Caballeros</h3>
+                            <p class="dress-type">Guayabera</p>
+                            <p class="dress-description">Guayabera blanca o color claro<br>Pantalón color caqui</p>
+                            <div class="color-reference">
+                                <span class="color-sample" style="background: #D2B48C;" title="Caqui"></span>
+                                <span class="color-sample" style="background: #C19A6B;" title="Beige"></span>
+                                <span class="color-sample" style="background: #B8956A;" title="Arena"></span>
+                            </div>
+                        </div>
+                        <div class="dress-item">
+                            <div class="icon">👗</div>
+                            <h3>Damas</h3>
+                            <p class="dress-type">Vestido</p>
+                            <p class="dress-description">Vestido largo o cocktail<br>en tonos pasteles o vibrantes</p>
+                            <div class="color-reference">
+                                <span class="color-sample" style="background: #FFB6C1;" title="Rosa"></span>
+                                <span class="color-sample" style="background: #98D8C8;" title="Verde"></span>
+                                <span class="color-sample" style="background: #B4A7D6;" title="Lavanda"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="dress-note">⚠️ Por favor, evitar usar colores blancos y tonos marfil</p>
+                </div>
+            </section>
+
+            <!-- Confirmación de asistencia -->
+            <section class="rsvp">
+                <h2>Confirmación de Asistencia</h2>
+                <p class="rsvp-text">Por favor confirma tu asistencia antes del 29 de Enero de 2026</p>
+                <p class="guest-count">Pases asignados: <strong id="guest-count">1</strong></p>
+                <div class="rsvp-buttons">
+                    <button class="btn-confirm" id="btn-confirm">Confirma aquí</button>
+                </div>
+            </section>
+
+            <!-- Mesa de regalos -->
+            <section class="gifts">
+                <h2>Mesa de Regalos</h2>
+                <p class="gifts-text">Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo:</p>
+                <div class="gift-options">
+                    <a href="#" class="gift-card" target="_blank">
+                        <img src="https://yt3.googleusercontent.com/pH09cU6xChYzNBxVPRUZJRQOF79SSnQDw-Ge0WtmTu34NCUUo92mDBljaKGcxDKTnmswCb5m=s900-c-k-c0x00ffffff-no-rj" alt="Liverpool" class="gift-logo-img">
+                        <p>Liverpool</p>
+                        <p class="event-number">#51783234</p>
+                    </a>
+                    <a href="#" class="gift-card" target="_blank">
+                        <img src="https://images.seeklogo.com/logo-png/61/1/sears-mexico-logo-png_seeklogo-615598.png" alt="Sears" class="gift-logo-img">
+                        <p>Sears</p>
+                        <p class="event-number">#212706</p>
+                    </a>
+                    <a href="#" class="gift-card" target="_blank">
+                        <img src="https://i.scdn.co/image/ab6775700000ee8543c94f0edcfa8676ee1158b8" alt="Palacio de Hierro" class="gift-logo-img">
+                        <p>Palacio de Hierro</p>
+                        <p class="event-number">#401522</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Galería de fotos -->
+            <section class="gallery">
+                <h2>Nuestra Historia</h2>
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="assets/images/1.jpg" alt="1er Viaje a San Cristóbal" class="gallery-photo">
+                        <p class="photo-caption">Viaje a San Cristóbal</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/2.jpg" alt="Visita a Palenque" class="gallery-photo">
+                        <p class="photo-caption">Visita a Palenque</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/3.jpg" alt="Lagos de Montebello" class="gallery-photo">
+                        <p class="photo-caption">Lagos de Montebello</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/4.jpg" alt="Boda de Carlitos" class="gallery-photo">
+                        <p class="photo-caption">Comprometidos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="invitation-footer">
+                <p class="footer-message">¡Esperamos contar con tu presencia en este día tan especial!</p>
+                <div class="couple-initials-small">A & R</div>
+                <p class="date-footer">14 • 02 • 2026</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>
