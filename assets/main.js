@@ -31,16 +31,17 @@ function getURLParams() {
 // Actualizar información del invitado
 function updateGuestInfo() {
     const guestNameElement = document.getElementById('guest-name');
-    const guestCountElement = document.getElementById('guest-count');
+    const guestCountElements = document.querySelectorAll('.guest-count-number');
     const invitationVerbElement = document.getElementById('invitation-verb');
     
     if (guestNameElement) {
         guestNameElement.textContent = guestName;
     }
     
-    if (guestCountElement) {
-        guestCountElement.textContent = guestCount;
-    }
+    // Actualizar todos los elementos de conteo de invitados
+    guestCountElements.forEach(element => {
+        element.textContent = guestCount;
+    });
     
     if (invitationVerbElement) {
         invitationVerbElement.textContent = isFamilia ? 'invitarlos' : 'invitarte';
