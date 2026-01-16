@@ -165,43 +165,30 @@ h1, h2, h3, h4 {
 .envelope {
     width: 280px;
     height: 180px;
-    background: var(--dark-green);
     margin: 0 auto 1rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.envelope-flap {
-    width: 0;
-    height: 0;
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-top: 100px solid var(--light-green);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.wax-seal {
+.wax-seal-image {
     width: 60px;
     height: 60px;
-    background: var(--gold);
-    border-radius: 50%;
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.wax-seal::before {
-    content: '🌿';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
 
 .tap-instruction {
