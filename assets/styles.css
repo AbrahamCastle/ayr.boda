@@ -279,6 +279,73 @@ h1, h2, h3, h4 {
     margin: 1rem auto;
 }
 
+/* Sección de padres */
+.parents-section {
+    padding: 3rem 2rem;
+    text-align: center;
+    /* background: linear-gradient(to bottom, rgba(201, 168, 106, 0.05) 0%, rgba(201, 168, 106, 0.1) 100%); */
+}
+
+.parents-section h2 {
+    font-size: 2rem;
+    color: var(--dark-gold);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.parents-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.parent-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 2px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.parent-label {
+    font-size: 1.1rem;
+    color: var(--dark-gold);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.parent-names {
+    display: flex;
+    flex-direction: column;
+}
+
+.parent-names p {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.parent-connector {
+    font-size: 1.2rem !important;
+    color: var(--gold) !important;
+    font-weight: 400 !important;
+    margin: 0.3rem 0;
+}
+
 /* Countdown */
 .countdown-section {
     text-align: center;
@@ -400,7 +467,7 @@ h1, h2, h3, h4 {
 .date-section {
     text-align: center;
     padding: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .date-text {
@@ -1116,6 +1183,23 @@ h1, h2, h3, h4 {
 @media (max-width: 480px) {
     .invitation-content {
         padding: 0.25rem;
+    }
+    
+    .parents-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .parents-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .parent-card {
+        padding: 1.5rem;
+    }
+    
+    .parent-names p {
+        font-size: 1.2rem;
     }
     
     .invitation-header,
